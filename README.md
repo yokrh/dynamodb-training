@@ -7,7 +7,7 @@ AWS DynamoDB training with LocalStack and Spring Boot
 
 * IntelliJ IDEA
 
-* AWS Local CLI
+* awscli-local
 https://github.com/localstack/awscli-local
 
 
@@ -22,7 +22,7 @@ selected
 * Project
   * Gradle - Groovy
 * Language
-  * Kotlin
+  * Java
 * Spring Boot
   * 3.2.1
 * Packaging
