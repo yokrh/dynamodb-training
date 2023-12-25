@@ -1,9 +1,17 @@
-# localstack-dynamodb-s3-training
+# localstack-dynamodb-training
 
-AWS DynamoDB, S3 training with LocalStack and Spring Boot
+AWS DynamoDB training with LocalStack and Spring Boot
 
 
-## Workflow / Prerequisite
+## Prerequisite
+
+* IntelliJ IDEA
+
+* AWS Local CLI
+https://github.com/localstack/awscli-local
+
+
+## Workflow
 
 ### Spring initializer
 
@@ -46,6 +54,26 @@ selected
 | cost | ○ | ○ | 従量課金 + リクエスト課金 |
 
 
+### Sample curl
+
+```sh
+# Get a record in DDB
+curl "localhost:8080/v1/user/1"
+
+# Delete a record in DDB
+curl -X PUT "localhost:8080/v1/user/1?userName=name1"
+
+# Update a record in DDB
+curl -X POST "localhost:8080/v1/user" \
+-H "Content-Type: application/json" \
+-d '{"userName": "username3", "birthday": "20001010"}'
+```
+
+### Dynamo Admin (DDB data viewer)
+
+http://localhost:8001/
+
+
 ## Reference
 
 * Spring Boot Reference Documentation > docker compose support
@@ -56,6 +84,9 @@ https://docs.docker.com/compose/compose-file/04-version-and-name/
 
 * DynamoDBのキー・インデックスについてまとめてみた #DynamoDB - Qiita
 https://qiita.com/shibataka000/items/e3f3792201d6fcc397fd
+
+* localstack/localstack - Docker Image | Docker Hub
+https://hub.docker.com/r/localstack/localstack
 
 * LocalStack Configuration | Docs > DYNAMODB_SHARE_DB
 https://docs.localstack.cloud/references/configuration/#:~:text=DYNAMODB_SHARE_DB
