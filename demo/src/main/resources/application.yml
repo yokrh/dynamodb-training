@@ -2,3 +2,13 @@ spring:
   docker:
     compose:
       file: "docker/compose.yml"
+
+aws:
+  dynamodb:
+    region: "ap-northeast-1"
+    host: "http://localhost:4566"
+  s3:
+    region: "ap-northeast-1"
+    host: "http://localhost:4566"
+    bucket: "test-bucket"
+    directory: "test-dir"

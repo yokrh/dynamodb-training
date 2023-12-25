@@ -7,9 +7,10 @@ services:
     ports:
       - 4566:4566
     volumes:
-      - "${LOCALSTACK_DDB_INIT_DIR:-./docker/localstack/dynamodb_init.sh}:/etc/localstack/init/ready.d/dynamodb_init.sh"
-      - "${LOCALSTACK_S3_INIT_DIR:-./docker/localstack/s3_init.sh}:/etc/localstack/init/ready.d/s3_init.sh"
-      - "${LOCALSTACK_S3_DATA_DIR:-./docker/localstack/s3/data/sample}:/home/localstack/data/sample"
+      - "${LOCALSTACK_DDB_INIT_DIR:-./localstack/dynamodb/init.sh}:/etc/localstack/init/ready.d/dynamodb_init.sh"
+      - "${LOCALSTACK_DDB_DATA_DIR:-./localstack/dynamodb/data}:/home/localstack/data/dynamodb"
+      - "${LOCALSTACK_S3_INIT_DIR:-./localstack/s3/init.sh}:/etc/localstack/init/ready.d/s3_init.sh"
+      - "${LOCALSTACK_S3_DATA_DIR:-./localstack/s3/data}:/home/localstack/data/s3"
   dynamodb-admin:
     container_name: dynamodb-admin
     image: aaronshaf/dynamodb-admin:latest
@@ -19,5 +20,5 @@ services:
       - 8001:8001
     depends_on:
       - localstack
-    profiles:
-      - debug # docker-compose --profile debug up
+    # profiles:
+    #   - debug # docker-compose --profile debug up
