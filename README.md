@@ -51,7 +51,7 @@ selected
 | ease of analytics | ○ | △ | |
 | ease of dvelopment | ◎ | ○ | |
 | schema flexibility | △ | ○ | |
-| cost | ○ | ○ | 従量課金 + リクエスト課金 |
+| cost | ○ | △ | 従量課金 + リクエスト課金。DDBは実はリクエスト課金が高いので、バッチや順アーカイブ向き |
 
 
 ### Sample curl
